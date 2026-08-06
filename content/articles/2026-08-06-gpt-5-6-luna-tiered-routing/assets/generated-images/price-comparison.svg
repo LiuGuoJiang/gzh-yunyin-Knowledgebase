@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#f5f7fb"/>
+  <rect x="48" y="48" width="1104" height="704" rx="32" fill="#ffffff" stroke="#dfe6f0" stroke-width="2"/>
+  <text x="92" y="126" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="48" font-weight="800">GPT-5.6 最新标准 API 价格</text>
+  <text x="92" y="172" fill="#718096" font-family="Noto Sans CJK SC, sans-serif" font-size="24">每百万输入 / 输出 Token · 2026 年 7 月 30 日起</text>
+
+  <rect x="88" y="224" width="320" height="310" rx="24" fill="#eef4ff" stroke="#2367e8" stroke-width="3"/>
+  <rect x="112" y="248" width="118" height="38" rx="19" fill="#2367e8"/>
+  <text x="171" y="274" text-anchor="middle" fill="#ffffff" font-family="Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">降价 80%</text>
+  <text x="120" y="346" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="38" font-weight="800">Luna</text>
+  <text x="120" y="414" fill="#2367e8" font-family="Noto Sans CJK SC, sans-serif" font-size="51" font-weight="800">$0.20</text>
+  <text x="120" y="454" fill="#718096" font-family="Noto Sans CJK SC, sans-serif" font-size="21">输入</text>
+  <text x="264" y="414" fill="#2367e8" font-family="Noto Sans CJK SC, sans-serif" font-size="51" font-weight="800">$1.20</text>
+  <text x="264" y="454" fill="#718096" font-family="Noto Sans CJK SC, sans-serif" font-size="21">输出</text>
+
+  <rect x="440" y="224" width="320" height="310" rx="24" fill="#ffffff" stroke="#cfd8e6" stroke-width="2"/>
+  <rect x="464" y="248" width="118" height="38" rx="19" fill="#dbe7ff"/>
+  <text x="523" y="274" text-anchor="middle" fill="#2367e8" font-family="Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">降价 20%</text>
+  <text x="472" y="346" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="38" font-weight="800">Terra</text>
+  <text x="472" y="414" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="51" font-weight="800">$2</text>
+  <text x="472" y="454" fill="#718096" font-family="Noto Sans CJK SC, sans-serif" font-size="21">输入</text>
+  <text x="616" y="414" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="51" font-weight="800">$12</text>
+  <text x="616" y="454" fill="#718096" font-family="Noto Sans CJK SC, sans-serif" font-size="21">输出</text>
+
+  <rect x="792" y="224" width="320" height="310" rx="24" fill="#ffffff" stroke="#cfd8e6" stroke-width="2"/>
+  <rect x="816" y="248" width="118" height="38" rx="19" fill="#edf0f5"/>
+  <text x="875" y="274" text-anchor="middle" fill="#657086" font-family="Noto Sans CJK SC, sans-serif" font-size="20" font-weight="700">价格不变</text>
+  <text x="824" y="346" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="38" font-weight="800">Sol</text>
+  <text x="824" y="414" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="51" font-weight="800">$5</text>
+  <text x="824" y="454" fill="#718096" font-family="Noto Sans CJK SC, sans-serif" font-size="21">输入</text>
+  <text x="968" y="414" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="51" font-weight="800">$30</text>
+  <text x="968" y="454" fill="#718096" font-family="Noto Sans CJK SC, sans-serif" font-size="21">输出</text>
+
+  <rect x="88" y="576" width="1024" height="116" rx="20" fill="#172033"/>
+  <text x="120" y="625" fill="#9ebdff" font-family="Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700">同量 Token 对比</text>
+  <text x="120" y="669" fill="#ffffff" font-family="Noto Sans CJK SC, sans-serif" font-size="34" font-weight="800">Luna 的标准 Token 价格约为 Sol 的 1 / 25</text>
+</svg>
