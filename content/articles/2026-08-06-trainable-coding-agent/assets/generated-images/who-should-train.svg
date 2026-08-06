@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820">
+  <rect width="1200" height="820" rx="28" fill="#f7f9fc"/>
+  <text x="70" y="88" fill="#1d2638" font-family="Noto Sans CJK SC, sans-serif" font-size="42" font-weight="700">现在要不要训练自己的 Coding Agent？</text>
+  <text x="70" y="138" fill="#69758b" font-family="Noto Sans CJK SC, sans-serif" font-size="24">先看任务与验证条件，再看强化学习</text>
+  <rect x="70" y="196" width="500" height="526" rx="24" fill="#edf3ff" stroke="#b7ccff" stroke-width="2"/>
+  <text x="110" y="252" fill="#1f5eff" font-family="Noto Sans CJK SC, sans-serif" font-size="30" font-weight="700">适合小规模实验</text>
+  <g fill="#26334a" font-family="Noto Sans CJK SC, sans-serif" font-size="26">
+    <text x="110" y="326">01  能控制模型与推理服务</text>
+    <text x="110" y="398">02  任务重复，结果可验证</text>
+    <text x="110" y="470">03  已有测试、构建与隔离环境</text>
+    <text x="110" y="542">04  能区分代码、工具和环境故障</text>
+  </g>
+  <rect x="110" y="602" width="420" height="74" rx="14" fill="#1f5eff"/>
+  <text x="320" y="648" text-anchor="middle" fill="#ffffff" font-family="Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700">从一类任务和未见样本开始</text>
+  <rect x="630" y="196" width="500" height="526" rx="24" fill="#ffffff" stroke="#d8dee9" stroke-width="2"/>
+  <text x="670" y="252" fill="#2d3442" font-family="Noto Sans CJK SC, sans-serif" font-size="30" font-weight="700">大多数开发者先做这些</text>
+  <g fill="#354158" font-family="Noto Sans CJK SC, sans-serif" font-size="26">
+    <text x="670" y="326">01  写清完成与失败条件</text>
+    <text x="670" y="398">02  补测试和静态检查</text>
+    <text x="670" y="470">03  保留命令、日志和补丁轨迹</text>
+    <text x="670" y="542">04  建立可复现的失败分类</text>
+  </g>
+  <rect x="670" y="602" width="420" height="74" rx="14" fill="#eef1f6"/>
+  <text x="880" y="648" text-anchor="middle" fill="#38445a" font-family="Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700">先提高可控性，再判断是否训练</text>
+  <text x="600" y="776" text-anchor="middle" fill="#5e6a80" font-family="Noto Sans CJK SC, sans-serif" font-size="23">完成标准不稳定，强化学习只会把标准里的漏洞反复放大</text>
+</svg>

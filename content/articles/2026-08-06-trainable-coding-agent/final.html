@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>只改 Prompt 不够了：Coding Agent 开始把测试结果变成训练信号</title>
+</head>
+<body style="margin:0;padding:0;background:#f3f6fb;color:#202636;">
+  <main style="box-sizing:border-box;max-width:720px;margin:0 auto;padding:26px 21px 46px;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif;">
+    <section style="margin:0 0 26px;padding:0 0 15px;border-bottom:1px solid #e4e9f1;">
+      <span style="display:inline-block;padding:5px 10px;border-radius:999px;background:#1f5eff;color:#ffffff;font-size:12px;font-weight:700;letter-spacing:.8px;line-height:1.4;">AI自由圈</span>
+      <span style="margin-left:9px;color:#778198;font-size:12px;letter-spacing:.5px;line-height:1.4;">AI NEWS &amp; TOOLS</span>
+    </section>
+    <article style="margin:0;padding:0;">
+      <h1 style="margin:0 0 26px;color:#172033;font-size:30px;font-weight:800;line-height:1.36;letter-spacing:-.5px;">只改 Prompt 不够了：Coding Agent 开始把测试结果变成训练信号</h1>
+
+      <p style="margin:0 0 18px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">过去我们讨论 Coding Agent，注意力通常都在模型、Prompt 和工具上。</p>
+      <p style="margin:0 0 18px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">8 月 5 日，Hugging Face 社区公开了一条不太一样的路线：把 TRL、OpenEnv 和 OpenCode 接到一起，让 Coding Agent 在隔离沙箱里运行完整工具循环，再把真实轨迹和隐藏测试的结果送回训练器。</p>
+      <p style="margin:0 0 18px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">官方用 Qwen3-8B 跑了 32 道 DeepCoder 题目，训练 10 步，平均奖励从约 0.27 升到 0.71。</p>
+      <p style="margin:0 0 18px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">先别被这条曲线带走。32 道题、10 步训练，证明不了真实项目里的编码能力。它说明的是另一件事：Agent 执行任务、测试结果、模型更新，这三段终于能在同一条开源链路里接起来了。</p>
+      <p style="margin:25px 0 8px;"><img src="assets/source-images/hf-qwen3-8b-reward-curve.png" alt="Qwen3-8B 在 32 道题、10 步训练中的平均奖励与波动曲线" style="display:block;width:100%;height:auto;margin:0;border:1px solid #e7ebf2;border-radius:8px;background:#f7f9fc;" /></p>
+      <p style="margin:0 0 22px;color:#7a8498;font-size:13px;line-height:1.65;">图 1｜官方实验中的平均奖励约从 0.27 升到 0.71；样本少、训练短，不能外推为真实项目能力。来源：Hugging Face。</p>
+
+      <h2 style="margin:38px 0 17px;padding-left:12px;border-left:4px solid #1f5eff;color:#1b2639;font-size:22px;font-weight:780;line-height:1.45;">把 Agent 真正做过的事送回训练器</h2>
+      <p style="margin:0 0 18px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">以往训练 Agent，常见做法是让训练器控制交互：模型生成一轮，训练器解析工具调用，执行后再把结果喂回去。</p>
+      <p style="margin:0 0 18px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">上线时却不是这套工作方式。真实的 Coding Agent 运行在 Harness 里，要读文件、改代码、跑命令，还要处理报错并继续修复。训练时学的是一套近似交互，部署时面对的是另一套完整工作流。</p>
+      <p style="margin:0 0 11px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">这次采用的是 loop-owning 模式，循环控制权在 OpenCode 手里：</p>
+      <ol style="box-sizing:border-box;margin:8px 0 22px;padding:16px 18px 10px 42px;border-radius:10px;background:#f3f6fc;">
+        <li style="margin:0 0 9px;padding-left:3px;color:#30384a;font-size:15px;line-height:1.8;">每次 rollout 启动一个独立沙箱；</li>
+        <li style="margin:0 0 9px;padding-left:3px;color:#30384a;font-size:15px;line-height:1.8;">OpenCode 自己决定何时读文件、编辑代码、执行命令；</li>
+        <li style="margin:0 0 9px;padding-left:3px;color:#30384a;font-size:15px;line-height:1.8;">透明代理记录模型实际生成的 token、logprob 和消息轨迹；</li>
+        <li style="margin:0 0 9px;padding-left:3px;color:#30384a;font-size:15px;line-height:1.8;">隐藏测试检查最终工作区并给出奖励；</li>
+        <li style="margin:0 0 9px;padding-left:3px;color:#30384a;font-size:15px;line-height:1.8;">TRL 的 AsyncGRPO 根据同组结果更新模型。</li>
+      </ol>
+      <p style="margin:25px 0 8px;"><img src="assets/source-images/hf-real-harness-training-pipeline.png" alt="TRL、OpenEnv、OpenCode、透明代理与验证器组成的真实 Harness 训练链路" style="display:block;width:100%;height:auto;margin:0;border:1px solid #e7ebf2;border-radius:8px;background:#f7f9fc;" /></p>
+      <p style="margin:0 0 22px;color:#7a8498;font-size:13px;line-height:1.65;">图 2｜OpenCode 掌控工具循环，透明代理记录真实轨迹，验证器把隐藏测试结果送回 TRL。来源：Hugging Face。</p>
+      <p style="margin:0 0 18px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">Harness 可以理解为模型外面的工作系统，负责上下文、工具和多轮执行。以前它主要决定 Agent 上线后怎么干活。现在，它也开始提供模型训练时要学习的轨迹。</p>
+
+      <h2 style="margin:38px 0 17px;padding-left:12px;border-left:4px solid #1f5eff;color:#1b2639;font-size:22px;font-weight:780;line-height:1.45;">变化不在“多一个工具”，而在行为能被训练</h2>
+      <p style="margin:0 0 18px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">给 Agent 装上搜索或终端工具，只是增加了它运行时的能力。模型有没有正确使用工具，通常不会自动写回参数。</p>
+      <p style="margin:0 0 18px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">这条新链路把行为和学习接上了。OpenCode 做过哪些操作，最终有没有通过隐藏测试，都会成为训练信号。测试也不再只负责发布前拦错，它开始影响模型以后更愿意采取什么行动。</p>
+      <p style="margin:0 0 18px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">类似方向并非首次出现。7 月公开的 OpenForgeRL 已经用代理层和远程容器训练真实 Harness。Hugging Face 这次更实际的价值，是把 OpenCode、OpenEnv 和 TRL 组合成一份可拆解、可复现的开源配方。</p>
+      <p style="margin:0 0 18px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">如果这条路线继续走下去，团队难以复制的部分，可能会是自己的任务、工具链、验证器和失败记录。基础模型可以买到，真实工作怎样被定义和验收，却很难直接照搬。</p>
+
+      <h2 style="margin:38px 0 17px;padding-left:12px;border-left:4px solid #1f5eff;color:#1b2639;font-size:22px;font-weight:780;line-height:1.45;">奖励上涨，不等于学会了软件工程</h2>
+      <p style="margin:0 0 18px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">这次实验离生产可用还有明显距离。</p>
+      <p style="margin:0 0 18px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">训练数据主要是竞赛编程题，不是大型企业代码仓库。官方披露的另一轮 Qwen3-4B 远程实验里，奖励上升几步后又坍塌了，Agent 开始反复调用工具，却一直没有解出问题。作者没有给出确定原因，只列出了训练太短、异步延迟、沙箱失败和模型较小等可能性。</p>
+      <p style="margin:0 0 18px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">工具本身也在快速变化。相关 TRL 能力仍位于 <code style="margin:0 2px;padding:2px 5px;border-radius:4px;background:#edf1f7;color:#243754;font-family:SFMono-Regular,Consolas,'Liberation Mono',monospace;font-size:.88em;">experimental</code>，OpenEnv 官方仓库明确提醒，项目处于早期阶段，可能遇到 Bug、功能缺失和接口变动。</p>
+      <p style="margin:0 0 18px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">真正麻烦的还是验证器。</p>
+      <p style="margin:0 0 18px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">模型会优化“验证器能看见的成功”。如果测试只覆盖正常路径，Agent 可能学会让测试变绿，却漏掉权限、安全、性能回退和维护成本。测试通过，从来不等于业务正确。</p>
+      <p style="margin:25px 0 8px;"><img src="assets/generated-images/verifier-boundary.png" alt="验证器能看见的成功与完整业务正确之间的边界" style="display:block;width:100%;height:auto;margin:0;border:0;border-radius:8px;background:#f7f9fc;" /></p>
+      <p style="margin:0 0 22px;color:#7a8498;font-size:13px;line-height:1.65;">图 3｜验证器只会奖励它能观察到的目标；权限、安全、性能和可维护性仍需单独定义。</p>
+      <p style="margin:0 0 18px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">沙箱启动失败、Agent 崩溃或验证超时，也不能和代码解错题混在一起。否则基础设施故障会变成错误的低奖励。做这类训练，失败归因不是运维收尾，而是训练数据的一部分。</p>
+
+      <h2 style="margin:38px 0 17px;padding-left:12px;border-left:4px solid #1f5eff;color:#1b2639;font-size:22px;font-weight:780;line-height:1.45;">谁值得现在试一试</h2>
+      <p style="margin:0 0 18px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">真正适合小规模实验的团队，通常已经能控制开源模型和推理服务，手里有重复、结果可验证的垂直任务，也有测试、构建脚本和隔离环境。这样的团队可以先选一小类任务，检查提升能否迁移到没见过的样本，再考虑扩大投入。</p>
+      <p style="margin:0 0 11px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">大多数使用托管式 Coding Agent 的程序员，暂时没必要搭强化学习集群。眼下更有用的是把工作变得可验证：</p>
+      <ul style="box-sizing:border-box;margin:8px 0 22px;padding:16px 18px 10px 40px;border-radius:10px;background:#f3f6fc;">
+        <li style="margin:0 0 9px;padding-left:3px;color:#30384a;font-size:15px;line-height:1.8;">写清楚完成条件和失败条件；</li>
+        <li style="margin:0 0 9px;padding-left:3px;color:#30384a;font-size:15px;line-height:1.8;">补上测试与静态检查；</li>
+        <li style="margin:0 0 9px;padding-left:3px;color:#30384a;font-size:15px;line-height:1.8;">在隔离环境中运行 Agent，保留命令、日志和补丁；</li>
+        <li style="margin:0 0 9px;padding-left:3px;color:#30384a;font-size:15px;line-height:1.8;">区分代码、工具、环境和需求导致的失败。</li>
+      </ul>
+      <p style="margin:25px 0 8px;"><img src="assets/generated-images/who-should-train.png" alt="哪些团队适合训练自己的 Coding Agent，以及大多数开发者应先完成的工作" style="display:block;width:100%;height:auto;margin:0;border:0;border-radius:8px;background:#f7f9fc;" /></p>
+      <p style="margin:0 0 22px;color:#7a8498;font-size:13px;line-height:1.65;">图 4｜先判断任务和验证条件，再决定是否投入强化学习。</p>
+      <p style="margin:0 0 18px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">即使永远不训练模型，这些工作也能改善现有 Coding Agent 的可靠性。完成标准都不稳定时，直接跑强化学习，只会把标准里的漏洞反复放大。</p>
+      <p style="margin:0 0 18px;color:#30384a;font-size:16px;line-height:1.9;letter-spacing:.12px;text-align:justify;">这次实验没有证明 Coding Agent 已经能持续“自我进化”。它只是把方向做得更具体了：模型在真实工具链里执行，系统验证结果，再用真实轨迹训练模型。</p>
+      <blockquote style="box-sizing:border-box;margin:25px 0;padding:18px 20px;border-left:4px solid #1f5eff;border-radius:0 8px 8px 0;background:#eef3ff;color:#223655;">
+        <p style="margin:0;color:#223655;font-size:16px;font-weight:650;line-height:1.85;">对大多数团队来说，第一步不是马上跑 GRPO，而是先让“完成”成为一个能可靠判断、可以复现的工程事实。</p>
+      </blockquote>
+
+      <h2 style="margin:42px 0 17px;padding-left:12px;border-left:4px solid #1f5eff;color:#1b2639;font-size:22px;font-weight:780;line-height:1.45;">参考资料</h2>
+      <ol style="margin:8px 0 22px;padding-left:25px;">
+        <li style="margin:0 0 10px;padding-left:3px;color:#455065;font-size:14px;line-height:1.75;">Hugging Face：<a href="https://huggingface.co/blog/sergiopaniego/trl-openenv-harness-training" style="color:#1f5eff;text-decoration:underline;text-decoration-color:#a8bfff;text-underline-offset:3px;word-break:break-word;">Training a coding agent using the OpenCode harness in remote HF sandboxes with TRL and OpenEnv</a></li>
+        <li style="margin:0 0 10px;padding-left:3px;color:#455065;font-size:14px;line-height:1.75;">Hugging Face TRL Docs：<a href="https://huggingface.co/docs/trl/main/openenv" style="color:#1f5eff;text-decoration:underline;text-decoration-color:#a8bfff;text-underline-offset:3px;word-break:break-word;">OpenEnv Integration for Training LLMs with Environments</a></li>
+        <li style="margin:0 0 10px;padding-left:3px;color:#455065;font-size:14px;line-height:1.75;">Hugging Face TRL：<a href="https://github.com/huggingface/trl/blob/main/examples/scripts/openenv/opencode_hf_sandbox.py" style="color:#1f5eff;text-decoration:underline;text-decoration-color:#a8bfff;text-underline-offset:3px;word-break:break-word;">OpenCode HF Sandbox 示例</a></li>
+        <li style="margin:0 0 10px;padding-left:3px;color:#455065;font-size:14px;line-height:1.75;">Hugging Face OpenEnv：<a href="https://huggingface.co/docs/openenv/environments/opencode" style="color:#1f5eff;text-decoration:underline;text-decoration-color:#a8bfff;text-underline-offset:3px;word-break:break-word;">OpenCode Environment</a></li>
+        <li style="margin:0 0 10px;padding-left:3px;color:#455065;font-size:14px;line-height:1.75;">Hugging Face Datasets：<a href="https://huggingface.co/datasets/agentica-org/DeepCoder-Preview-Dataset" style="color:#1f5eff;text-decoration:underline;text-decoration-color:#a8bfff;text-underline-offset:3px;word-break:break-word;">DeepCoder-Preview-Dataset</a></li>
+        <li style="margin:0 0 10px;padding-left:3px;color:#455065;font-size:14px;line-height:1.75;">Yu 等：<a href="https://arxiv.org/abs/2607.21557" style="color:#1f5eff;text-decoration:underline;text-decoration-color:#a8bfff;text-underline-offset:3px;word-break:break-word;">OpenForgeRL: Train Harness-native Agents in Any Environment</a></li>
+        <li style="margin:0 0 10px;padding-left:3px;color:#455065;font-size:14px;line-height:1.75;">Luo 等：<a href="https://arxiv.org/abs/2508.03501" style="color:#1f5eff;text-decoration:underline;text-decoration-color:#a8bfff;text-underline-offset:3px;word-break:break-word;">Training Long-Context, Multi-Turn Software Engineering Agents with Reinforcement Learning</a></li>
+      </ol>
+    </article>
+  </main>
+</body>
+</html>

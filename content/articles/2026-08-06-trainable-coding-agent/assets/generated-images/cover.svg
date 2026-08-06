@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1440" viewBox="0 0 1080 1440">
+  <defs>
+    <linearGradient id="shade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.98"/>
+      <stop offset="0.54" stop-color="#ffffff" stop-opacity="0.83"/>
+      <stop offset="0.82" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <image href="cover-art.png" x="0" y="0" width="1080" height="1440" preserveAspectRatio="xMidYMid slice"/>
+  <rect x="0" y="0" width="780" height="900" fill="url(#shade)"/>
+  <rect x="76" y="76" width="214" height="48" rx="24" fill="#1f5eff"/>
+  <text x="183" y="108" text-anchor="middle" fill="#ffffff" font-family="Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700" letter-spacing="2">AI自由圈｜技术前沿</text>
+  <text x="76" y="220" fill="#1f5eff" font-family="Noto Sans CJK SC, sans-serif" font-size="30" font-weight="700" letter-spacing="1">只改 Prompt 不够了</text>
+  <text x="72" y="330" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="78" font-weight="700">Coding Agent</text>
+  <text x="72" y="435" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="78" font-weight="700">开始“边做边学”</text>
+  <rect x="76" y="500" width="394" height="58" rx="10" fill="#eef3ff" stroke="#b9ccff"/>
+  <text x="273" y="538" text-anchor="middle" fill="#244478" font-family="Noto Sans CJK SC, sans-serif" font-size="25" font-weight="600">真实 Harness × 强化学习</text>
+  <line x1="76" y1="612" x2="390" y2="612" stroke="#1f5eff" stroke-width="5"/>
+  <text x="76" y="1325" fill="#5f687a" font-family="Noto Sans CJK SC, sans-serif" font-size="22" letter-spacing="2">AI NEWS &amp; TOOLS｜2026</text>
+</svg>

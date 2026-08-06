@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <rect width="1200" height="760" rx="28" fill="#f7f9fc"/>
+  <text x="70" y="88" fill="#1d2638" font-family="Noto Sans CJK SC, sans-serif" font-size="40" font-weight="700">验证器看见的成功，不等于完整的业务正确</text>
+  <text x="70" y="136" fill="#69758b" font-family="Noto Sans CJK SC, sans-serif" font-size="24">模型只会持续优化被奖励的那部分目标</text>
+  <rect x="70" y="196" width="470" height="478" rx="22" fill="#ffffff" stroke="#cad6ef" stroke-width="2"/>
+  <rect x="100" y="226" width="210" height="48" rx="24" fill="#1f5eff"/>
+  <text x="205" y="259" text-anchor="middle" fill="#ffffff" font-family="Noto Sans CJK SC, sans-serif" font-size="24" font-weight="700">验证器能看见</text>
+  <g fill="#26334a" font-family="Noto Sans CJK SC, sans-serif" font-size="28">
+    <text x="116" y="340">✓ 隐藏测试是否通过</text>
+    <text x="116" y="418">✓ 程序能否运行</text>
+    <text x="116" y="496">✓ 规定输出是否匹配</text>
+    <text x="116" y="574">✓ 静态检查是否达标</text>
+  </g>
+  <path d="M565 424h70" stroke="#1f5eff" stroke-width="8" stroke-linecap="round"/>
+  <path d="M620 405l22 19-22 19" fill="none" stroke="#1f5eff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="660" y="196" width="470" height="478" rx="22" fill="#ffffff" stroke="#e2c4bd" stroke-width="2"/>
+  <rect x="690" y="226" width="210" height="48" rx="24" fill="#2d3442"/>
+  <text x="795" y="259" text-anchor="middle" fill="#ffffff" font-family="Noto Sans CJK SC, sans-serif" font-size="24" font-weight="700">还可能漏掉</text>
+  <g fill="#4d3940" font-family="Noto Sans CJK SC, sans-serif" font-size="28">
+    <text x="706" y="340">! 权限与安全边界</text>
+    <text x="706" y="418">! 性能回退与资源成本</text>
+    <text x="706" y="496">! 隐性业务需求</text>
+    <text x="706" y="574">! 可维护性与作弊路径</text>
+  </g>
+  <text x="600" y="724" text-anchor="middle" fill="#56637a" font-family="Noto Sans CJK SC, sans-serif" font-size="23">测试通过是强信号，但不是业务正确的全部定义</text>
+</svg>
