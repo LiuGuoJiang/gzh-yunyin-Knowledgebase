@@ -180,16 +180,26 @@
 - 使用边界：发布日期、上下文窗口和“速度拨盘”等多项表述与 OpenAI 当前官方资料不一致；不作为任何关键事实依据。
 - 核验状态：已打开页面并与 S02、S04～S07 对照，标记为争议 / 误解素材。
 
+## S18｜OpenAI API Pricing
+
+- 发布方：OpenAI Developers
+- 来源类型：官方实时价格表
+- 发布日期：页面未标注；访问日期 2026-08-06
+- 链接：https://developers.openai.com/api/docs/pricing
+- 支持的事实或观点：GPT-5.6 Sol、Terra、Luna 的 Standard、Batch、Flex、Fast 短上下文和长上下文价格；缓存写入、缓存读取与输出价格；Priority Processing 于 2026-07-30 更名为 Fast mode；工具可能另行计费。
+- 使用边界：价格属于动态信息，正式发布前仍需复核；不同处理档位、长短上下文和区域处理价格不能混用。
+- 核验状态：阶段二写作前已通过 OpenAI Developers 文档重新打开核验。
+
 ## 文章关键事实映射
 
 | 文章事实或判断 | 主要来源 |
 |---|---|
-| Luna 降价 80% 至 `$0.20 / $1.20`，Terra 降价 20% 至 `$2 / $12` | S01、S04、S05 |
-| Sol 标准价 `$5 / $30` 不变，Luna 同量 Token 价为 Sol 的 1/25 | S01、S04、S06 |
-| Fast mode 最高 2.5 倍速度、价格 2 倍，替代 Priority Processing | S01、S07 |
+| Luna 降价 80% 至 `$0.20 / $1.20`，Terra 降价 20% 至 `$2 / $12` | S01、S04、S05、S18 |
+| Sol 标准价 `$5 / $30` 不变，Luna 同量 Token 价为 Sol 的 1/25 | S01、S04、S06、S18 |
+| Fast mode 最高 2.5 倍速度、价格 2 倍，替代 Priority Processing | S01、S07、S18 |
 | OpenAI 给出 Sol 规划、Luna 执行和测试的编码示例 | S01 |
 | 20% 服务成本下降与 15% Token 生成效率提升 | S01、S03 |
-| GPT-5.6 缓存写入、读取与长上下文计费边界 | S04～S06、S09 |
+| GPT-5.6 缓存写入、读取与长上下文计费边界 | S04～S06、S09、S18 |
 | 成本优化要减少请求、Token，并在维持准确率前提下选小模型 | S08、S10 |
 | 模型路由需要按实际分布校准，分布外表现可能下降 | S11、S12 |
 | routing 是可复用的 Agent 工作流模式 | S13 |
