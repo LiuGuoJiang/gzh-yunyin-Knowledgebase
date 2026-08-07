@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1440" viewBox="0 0 1080 1440">
+  <defs>
+    <linearGradient id="headline-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050505" stop-opacity="0.94"/>
+      <stop offset="1" stop-color="#111111" stop-opacity="0.76"/>
+    </linearGradient>
+  </defs>
+  <image x="0" y="0" width="1080" height="1440" preserveAspectRatio="xMidYMid slice" xlink:href="cover-art.png"/>
+  <rect x="72" y="78" width="164" height="56" rx="8" fill="#efefef"/>
+  <text x="154" y="116" text-anchor="middle" fill="#171717" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="700">AI思考</text>
+  <text x="72" y="205" fill="#bdbdbd" font-family="Noto Sans, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="2">AGENT PLUGINS · SUPPLY CHAIN</text>
+  <rect x="56" y="250" width="920" height="276" rx="18" fill="url(#headline-bg)" stroke="#3b3b3b" stroke-width="1"/>
+  <rect x="72" y="282" width="8" height="168" fill="#d99222"/>
+  <text x="102" y="350" fill="#ffffff" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="66" font-weight="800">Agent 的“npm 时刻”</text>
+  <text x="102" y="445" fill="#ffffff" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="72" font-weight="800">真正的坑才刚开始</text>
+  <rect x="102" y="470" width="278" height="40" rx="20" fill="#242424" stroke="#686868" stroke-width="1"/>
+  <text x="241" y="499" text-anchor="middle" fill="#d6d6d6" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="600">包格式 × 供应链</text>
+  <text x="72" y="1386" fill="#b8b8b8" font-family="Noto Sans, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="1.5">TECH INSIGHT | 2026</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050">
+  <rect width="1600" height="1050" fill="#f5f5f2"/>
+  <path d="M0 0H1600V18H0Z" fill="#171717"/>
+  <text x="100" y="112" fill="#171717" font-family="Noto Sans CJK SC, sans-serif" font-size="58" font-weight="800">包格式统一后，还要过五道门</text>
+  <text x="100" y="167" fill="#6e6e68" font-family="Noto Sans CJK SC, sans-serif" font-size="28">每一道门都对应一个团队必须能回答的生产准入问题</text>
+
+  <rect x="95" y="260" width="250" height="180" rx="24" fill="#171717"/>
+  <path d="M145 305H230L258 335H300V395H145Z" fill="none" stroke="#eeeeee" stroke-width="6"/>
+  <text x="220" y="486" text-anchor="middle" fill="#171717" font-family="Noto Sans, Arial, sans-serif" font-size="29" font-weight="800">AGENT PLUGIN</text>
+
+  <path d="M370 350H445" stroke="#7a7a74" stroke-width="6"/>
+  <path d="M430 335L450 350L430 365" fill="none" stroke="#7a7a74" stroke-width="6"/>
+
+  <rect x="455" y="245" width="205" height="390" rx="22" fill="#ffffff" stroke="#292929" stroke-width="4"/>
+  <circle cx="558" cy="320" r="45" fill="#171717"/>
+  <text x="558" y="334" text-anchor="middle" fill="#ffffff" font-family="Noto Sans, Arial, sans-serif" font-size="34" font-weight="800">01</text>
+  <text x="558" y="420" text-anchor="middle" fill="#171717" font-family="Noto Sans CJK SC, sans-serif" font-size="42" font-weight="800">来源</text>
+  <text x="558" y="488" text-anchor="middle" fill="#676762" font-family="Noto Sans CJK SC, sans-serif" font-size="25">发布者</text>
+  <text x="558" y="528" text-anchor="middle" fill="#676762" font-family="Noto Sans CJK SC, sans-serif" font-size="25">源仓库</text>
+  <text x="558" y="568" text-anchor="middle" fill="#676762" font-family="Noto Sans CJK SC, sans-serif" font-size="25">构建来源</text>
+
+  <path d="M680 440H725" stroke="#7a7a74" stroke-width="5"/>
+  <path d="M710 427L728 440L710 453" fill="none" stroke="#7a7a74" stroke-width="5"/>
+
+  <rect x="735" y="245" width="205" height="390" rx="22" fill="#ffffff" stroke="#292929" stroke-width="4"/>
+  <circle cx="838" cy="320" r="45" fill="#171717"/>
+  <text x="838" y="334" text-anchor="middle" fill="#ffffff" font-family="Noto Sans, Arial, sans-serif" font-size="34" font-weight="800">02</text>
+  <text x="838" y="420" text-anchor="middle" fill="#171717" font-family="Noto Sans CJK SC, sans-serif" font-size="42" font-weight="800">成分</text>
+  <text x="838" y="488" text-anchor="middle" fill="#676762" font-family="Noto Sans CJK SC, sans-serif" font-size="25">脚本</text>
+  <text x="838" y="528" text-anchor="middle" fill="#676762" font-family="Noto Sans CJK SC, sans-serif" font-size="25">MCP Server</text>
+  <text x="838" y="568" text-anchor="middle" fill="#676762" font-family="Noto Sans CJK SC, sans-serif" font-size="25">依赖 / SBOM</text>
+
+  <path d="M960 440H1005" stroke="#7a7a74" stroke-width="5"/>
+  <path d="M990 427L1008 440L990 453" fill="none" stroke="#7a7a74" stroke-width="5"/>
+
+  <rect x="1015" y="245" width="205" height="390" rx="22" fill="#ffffff" stroke="#292929" stroke-width="4"/>
+  <circle cx="1118" cy="320" r="45" fill="#171717"/>
+  <text x="1118" y="334" text-anchor="middle" fill="#ffffff" font-family="Noto Sans, Arial, sans-serif" font-size="34" font-weight="800">03</text>
+  <text x="1118" y="420" text-anchor="middle" fill="#171717" font-family="Noto Sans CJK SC, sans-serif" font-size="42" font-weight="800">版本</text>
+  <text x="1118" y="488" text-anchor="middle" fill="#676762" font-family="Noto Sans CJK SC, sans-serif" font-size="25">commit</text>
+  <text x="1118" y="528" text-anchor="middle" fill="#676762" font-family="Noto Sans CJK SC, sans-serif" font-size="25">digest / diff</text>
+  <text x="1118" y="568" text-anchor="middle" fill="#676762" font-family="Noto Sans CJK SC, sans-serif" font-size="25">锁定 / 回滚</text>
+
+  <path d="M1240 440H1285" stroke="#7a7a74" stroke-width="5"/>
+  <path d="M1270 427L1288 440L1270 453" fill="none" stroke="#7a7a74" stroke-width="5"/>
+
+  <rect x="1295" y="245" width="205" height="390" rx="22" fill="#171717" stroke="#171717" stroke-width="4"/>
+  <circle cx="1398" cy="320" r="45" fill="#d99222"/>
+  <text x="1398" y="334" text-anchor="middle" fill="#171717" font-family="Noto Sans, Arial, sans-serif" font-size="34" font-weight="800">04</text>
+  <text x="1398" y="420" text-anchor="middle" fill="#ffffff" font-family="Noto Sans CJK SC, sans-serif" font-size="42" font-weight="800">权限</text>
+  <text x="1398" y="488" text-anchor="middle" fill="#d4d4d0" font-family="Noto Sans CJK SC, sans-serif" font-size="25">文件 / 网络</text>
+  <text x="1398" y="528" text-anchor="middle" fill="#d4d4d0" font-family="Noto Sans CJK SC, sans-serif" font-size="25">凭据 / 子进程</text>
+  <text x="1398" y="568" text-anchor="middle" fill="#d4d4d0" font-family="Noto Sans CJK SC, sans-serif" font-size="25">最小权限</text>
+
+  <path d="M1398 660V714" stroke="#d99222" stroke-width="6"/>
+  <path d="M1384 700L1398 720L1412 700" fill="none" stroke="#d99222" stroke-width="6"/>
+
+  <rect x="455" y="700" width="1045" height="145" rx="22" fill="#ffffff" stroke="#292929" stroke-width="4"/>
+  <circle cx="545" cy="772" r="44" fill="#171717"/>
+  <text x="545" y="786" text-anchor="middle" fill="#ffffff" font-family="Noto Sans, Arial, sans-serif" font-size="34" font-weight="800">05</text>
+  <text x="625" y="766" fill="#171717" font-family="Noto Sans CJK SC, sans-serif" font-size="42" font-weight="800">审计</text>
+  <text x="795" y="766" fill="#676762" font-family="Noto Sans CJK SC, sans-serif" font-size="27">安装 · 升级 · 授权 · 调用 · 失败</text>
+  <text x="625" y="810" fill="#676762" font-family="Noto Sans CJK SC, sans-serif" font-size="25">发生过什么，必须能追查</text>
+
+  <rect x="95" y="900" width="1405" height="96" rx="18" fill="#171717"/>
+  <text x="798" y="962" text-anchor="middle" fill="#ffffff" font-family="Noto Sans CJK SC, sans-serif" font-size="38" font-weight="700">格式解决可移植性，治理决定能否进入生产环境</text>
+</svg>
