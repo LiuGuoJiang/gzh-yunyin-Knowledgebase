@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#f5f7fb"/>
+  <rect x="48" y="48" width="1104" height="704" rx="32" fill="#ffffff" stroke="#dfe6f0" stroke-width="2"/>
+  <text x="92" y="126" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="48" font-weight="800">模型选择，下沉到 Agent 的每一步</text>
+  <text x="92" y="172" fill="#718096" font-family="Noto Sans CJK SC, sans-serif" font-size="24">先看不确定性、错误代价、时延和验收能力，再决定模型</text>
+
+  <rect x="88" y="246" width="190" height="104" rx="20" fill="#172033"/>
+  <text x="183" y="289" text-anchor="middle" fill="#ffffff" font-family="Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700">任务分类</text>
+  <text x="183" y="324" text-anchor="middle" fill="#aeb9c8" font-family="Noto Sans CJK SC, sans-serif" font-size="19">风险 · 时延 · 验收</text>
+  <path d="M278 298H338" stroke="#2367e8" stroke-width="7" stroke-linecap="round"/>
+  <path d="M326 286L340 298L326 310" fill="none" stroke="#2367e8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="348" y="214" width="278" height="104" rx="20" fill="#eef4ff" stroke="#2367e8" stroke-width="3"/>
+  <text x="376" y="257" fill="#2367e8" font-family="Noto Sans CJK SC, sans-serif" font-size="28" font-weight="800">Luna</text>
+  <text x="376" y="291" fill="#4b5a70" font-family="Noto Sans CJK SC, sans-serif" font-size="20">可预测 · 可自动验收</text>
+  <rect x="348" y="346" width="278" height="104" rx="20" fill="#ffffff" stroke="#cfd8e6" stroke-width="2"/>
+  <text x="376" y="389" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="28" font-weight="800">Terra</text>
+  <text x="376" y="423" fill="#4b5a70" font-family="Noto Sans CJK SC, sans-serif" font-size="20">日常综合判断</text>
+  <rect x="348" y="478" width="278" height="104" rx="20" fill="#ffffff" stroke="#cfd8e6" stroke-width="2"/>
+  <text x="376" y="521" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="28" font-weight="800">Sol / Fast</text>
+  <text x="376" y="555" fill="#4b5a70" font-family="Noto Sans CJK SC, sans-serif" font-size="20">高不确定性 · 高风险</text>
+
+  <path d="M626 266H696M626 398H696M626 530H696" stroke="#c8d3e2" stroke-width="5"/>
+  <path d="M696 266V530" stroke="#c8d3e2" stroke-width="5"/>
+  <path d="M696 398H746" stroke="#2367e8" stroke-width="7" stroke-linecap="round"/>
+  <path d="M734 386L748 398L734 410" fill="none" stroke="#2367e8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="756" y="322" width="182" height="152" rx="28" fill="#2367e8"/>
+  <circle cx="847" cy="373" r="24" fill="#ffffff"/>
+  <path d="M835 373L844 382L861 363" fill="none" stroke="#2367e8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="847" y="433" text-anchor="middle" fill="#ffffff" font-family="Noto Sans CJK SC, sans-serif" font-size="30" font-weight="800">质量门</text>
+
+  <path d="M938 398H986" stroke="#2367e8" stroke-width="7" stroke-linecap="round"/>
+  <text x="1008" y="344" fill="#2367e8" font-family="Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700">通过</text>
+  <text x="1008" y="402" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700">升级</text>
+  <text x="1008" y="460" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700">转人工</text>
+
+  <rect x="88" y="632" width="1024" height="72" rx="18" fill="#eef4ff"/>
+  <text x="600" y="678" text-anchor="middle" fill="#2352a8" font-family="Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700">模型不是固定路由表：验收失败、循环超限或高风险动作必须升级</text>
+</svg>

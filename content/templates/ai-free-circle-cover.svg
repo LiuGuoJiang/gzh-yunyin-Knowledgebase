@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1440" viewBox="0 0 1080 1440">
+  <defs>
+    <clipPath id="cover-clip"><rect width="1080" height="1440" rx="0"/></clipPath>
+    <linearGradient id="cover-fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f9faf8" stop-opacity="0.98"/>
+      <stop offset="0.47" stop-color="#f9faf8" stop-opacity="0.78"/>
+      <stop offset="0.7" stop-color="#f9faf8" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#f9faf8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g clip-path="url(#cover-clip)">
+    <image href="{{ART_HREF}}" width="1080" height="1440" preserveAspectRatio="xMidYMid slice"/>
+    <rect width="1080" height="940" fill="url(#cover-fade)"/>
+    <rect x="72" y="72" width="162" height="54" rx="10" fill="#2367e8"/>
+    <text x="153" y="108" text-anchor="middle" fill="#ffffff" font-family="Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700" letter-spacing="2">AI自由圈</text>
+    <text x="72" y="210" fill="#2367e8" font-family="Noto Sans CJK SC, sans-serif" font-size="27" font-weight="700" letter-spacing="2">{{KEYWORD}}</text>
+    <text x="72" y="322" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="76" font-weight="800">{{TITLE_LINE1}}</text>
+    <text x="72" y="426" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="76" font-weight="800">{{TITLE_LINE2}}</text>
+    <rect x="72" y="482" width="118" height="8" rx="4" fill="#2367e8"/>
+    <text x="72" y="1360" fill="#657086" font-family="Noto Sans CJK SC, sans-serif" font-size="22" font-weight="600" letter-spacing="2">AI NEWS · TOOL · ACTION</text>
+    <text x="1008" y="1360" text-anchor="end" fill="#657086" font-family="Noto Sans CJK SC, sans-serif" font-size="22" font-weight="600">2026</text>
+  </g>
+</svg>

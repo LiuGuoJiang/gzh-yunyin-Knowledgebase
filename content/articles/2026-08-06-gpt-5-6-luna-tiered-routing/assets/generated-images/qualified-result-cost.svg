@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#f5f7fb"/>
+  <rect x="48" y="48" width="1104" height="704" rx="32" fill="#ffffff" stroke="#dfe6f0" stroke-width="2"/>
+  <text x="92" y="126" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="48" font-weight="800">别只看 Token：按合格结果记账</text>
+  <text x="92" y="172" fill="#718096" font-family="Noto Sans CJK SC, sans-serif" font-size="24">低单价模型也可能被重试、循环和人工返工吃掉收益</text>
+
+  <rect x="88" y="224" width="1024" height="126" rx="22" fill="#172033"/>
+  <text x="600" y="274" text-anchor="middle" fill="#9ebdff" font-family="Noto Sans CJK SC, sans-serif" font-size="23" font-weight="700">每个合格结果的总成本</text>
+  <text x="600" y="324" text-anchor="middle" fill="#ffffff" font-family="Noto Sans CJK SC, sans-serif" font-size="32" font-weight="800">全部任务成本 ÷ 通过验收的结果数</text>
+
+  <rect x="88" y="390" width="308" height="112" rx="20" fill="#eef4ff"/>
+  <text x="118" y="435" fill="#2367e8" font-family="Noto Sans CJK SC, sans-serif" font-size="25" font-weight="800">模型与缓存</text>
+  <text x="118" y="472" fill="#4b5a70" font-family="Noto Sans CJK SC, sans-serif" font-size="20">输入 · 输出 · 缓存读写</text>
+  <rect x="446" y="390" width="308" height="112" rx="20" fill="#f6f8fb" stroke="#dfe6f0" stroke-width="2"/>
+  <text x="476" y="435" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="25" font-weight="800">工具与基础设施</text>
+  <text x="476" y="472" fill="#4b5a70" font-family="Noto Sans CJK SC, sans-serif" font-size="20">调用次数 · 计算 · 存储</text>
+  <rect x="804" y="390" width="308" height="112" rx="20" fill="#f6f8fb" stroke="#dfe6f0" stroke-width="2"/>
+  <text x="834" y="435" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="25" font-weight="800">重试与循环</text>
+  <text x="834" y="472" fill="#4b5a70" font-family="Noto Sans CJK SC, sans-serif" font-size="20">失败升级 · 多轮上下文</text>
+
+  <rect x="88" y="530" width="308" height="112" rx="20" fill="#f6f8fb" stroke="#dfe6f0" stroke-width="2"/>
+  <text x="118" y="575" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="25" font-weight="800">人工复核</text>
+  <text x="118" y="612" fill="#4b5a70" font-family="Noto Sans CJK SC, sans-serif" font-size="20">抽检 · 改写 · 接管</text>
+  <rect x="446" y="530" width="308" height="112" rx="20" fill="#f6f8fb" stroke="#dfe6f0" stroke-width="2"/>
+  <text x="476" y="575" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="25" font-weight="800">失败代价</text>
+  <text x="476" y="612" fill="#4b5a70" font-family="Noto Sans CJK SC, sans-serif" font-size="20">错误动作 · 回滚 · 返工</text>
+  <rect x="804" y="530" width="308" height="112" rx="20" fill="#2367e8"/>
+  <text x="834" y="575" fill="#ffffff" font-family="Noto Sans CJK SC, sans-serif" font-size="25" font-weight="800">质量与时延</text>
+  <text x="834" y="612" fill="#dce8ff" font-family="Noto Sans CJK SC, sans-serif" font-size="20">通过率 · 改写率 · P95</text>
+
+  <text x="600" y="702" text-anchor="middle" fill="#2352a8" font-family="Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700">真正的降本目标：用最低总成本，稳定交付过线结果</text>
+</svg>
