@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820">
+  <rect width="1200" height="820" rx="32" fill="#f7f8fa"/>
+  <text x="72" y="84" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="42" font-weight="750">故障发生在哪一层，就在哪一层降级</text>
+  <text x="72" y="130" fill="#6d778a" font-family="Noto Sans CJK SC, sans-serif" font-size="24">多模型只增加模型层冗余，不会自动修复共享执行层</text>
+  <text x="90" y="190" fill="#8a641b" font-family="Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700">故障位置</text>
+  <text x="680" y="190" fill="#244478" font-family="Noto Sans CJK SC, sans-serif" font-size="22" font-weight="700">对应退路</text>
+
+  <g font-family="Noto Sans CJK SC, sans-serif">
+    <rect x="72" y="218" width="430" height="104" rx="18" fill="#fff8e9" stroke="#ecd7aa" stroke-width="2"/>
+    <circle cx="118" cy="270" r="13" fill="#d79a2b"/><text x="148" y="263" fill="#332b1e" font-size="28" font-weight="700">模型 / 推理托管</text><text x="148" y="296" fill="#786b55" font-size="22">回答失败、延迟或服务异常</text>
+    <path d="M522 270h118" stroke="#1f5eff" stroke-width="5"/><path d="M626 256l16 14-16 14" fill="none" stroke="#1f5eff" stroke-width="5"/>
+    <rect x="660" y="218" width="468" height="104" rx="18" fill="#eef3ff" stroke="#bed0ff" stroke-width="2"/>
+    <text x="706" y="263" fill="#172f5b" font-size="28" font-weight="700">切换备用模型</text><text x="706" y="296" fill="#5d6f91" font-size="22">保留同一任务与验收标准</text>
+
+    <rect x="72" y="352" width="430" height="104" rx="18" fill="#fff8e9" stroke="#ecd7aa" stroke-width="2"/>
+    <circle cx="118" cy="404" r="13" fill="#d79a2b"/><text x="148" y="397" fill="#332b1e" font-size="28" font-weight="700">Copilot 平台编排</text><text x="148" y="430" fill="#786b55" font-size="22">任务接收、权限或调度异常</text>
+    <path d="M522 404h118" stroke="#1f5eff" stroke-width="5"/><path d="M626 390l16 14-16 14" fill="none" stroke="#1f5eff" stroke-width="5"/>
+    <rect x="660" y="352" width="468" height="104" rx="18" fill="#eef3ff" stroke="#bed0ff" stroke-width="2"/>
+    <text x="706" y="397" fill="#172f5b" font-size="28" font-weight="700">暂停云端 Agent</text><text x="706" y="430" fill="#5d6f91" font-size="22">改用本地工具或人工处理</text>
+
+    <rect x="72" y="486" width="430" height="104" rx="18" fill="#fff8e9" stroke="#ecd7aa" stroke-width="2"/>
+    <circle cx="118" cy="538" r="13" fill="#d79a2b"/><text x="148" y="531" fill="#332b1e" font-size="28" font-weight="700">Actions / Agent 执行</text><text x="148" y="564" fill="#786b55" font-size="22">workflow、runner 或 API 失败</text>
+    <path d="M522 538h118" stroke="#1f5eff" stroke-width="5"/><path d="M626 524l16 14-16 14" fill="none" stroke="#1f5eff" stroke-width="5"/>
+    <rect x="660" y="486" width="468" height="104" rx="18" fill="#eef3ff" stroke="#bed0ff" stroke-width="2"/>
+    <text x="706" y="531" fill="#172f5b" font-size="28" font-weight="700">退回 IDE / CLI</text><text x="706" y="564" fill="#5d6f91" font-size="22">使用不依赖云端执行的路径</text>
+
+    <rect x="72" y="620" width="430" height="104" rx="18" fill="#fff8e9" stroke="#ecd7aa" stroke-width="2"/>
+    <circle cx="118" cy="672" r="13" fill="#d79a2b"/><text x="148" y="665" fill="#332b1e" font-size="28" font-weight="700">事件无法自动重放</text><text x="148" y="698" fill="#786b55" font-size="22">push / PR 触发没有恢复</text>
+    <path d="M522 672h118" stroke="#1f5eff" stroke-width="5"/><path d="M626 658l16 14-16 14" fill="none" stroke="#1f5eff" stroke-width="5"/>
+    <rect x="660" y="620" width="468" height="104" rx="18" fill="#eef3ff" stroke="#bed0ff" stroke-width="2"/>
+    <text x="706" y="665" fill="#172f5b" font-size="28" font-weight="700">手动重跑 workflow</text><text x="706" y="698" fill="#5d6f91" font-size="22">必要时重新推送或更新 PR</text>
+  </g>
+  <rect x="72" y="762" width="1056" height="2" fill="#dfe5ef"/>
+  <text x="600" y="799" text-anchor="middle" fill="#253754" font-family="Noto Sans CJK SC, sans-serif" font-size="25" font-weight="700">多模型 ≠ 整条开发链路高可用</text>
+</svg>

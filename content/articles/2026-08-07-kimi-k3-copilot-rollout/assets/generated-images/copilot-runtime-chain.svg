@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="960" viewBox="0 0 1200 960">
+  <rect width="1200" height="960" rx="32" fill="#f7f8fa"/>
+  <text x="76" y="86" fill="#172033" font-family="Noto Sans CJK SC, sans-serif" font-size="42" font-weight="750">一次 Copilot 调用的五层链路</text>
+  <text x="76" y="132" fill="#6d778a" font-family="Noto Sans CJK SC, sans-serif" font-size="24">模型只是起点，任务要完成还要经过托管、编排和执行</text>
+
+  <g font-family="Noto Sans CJK SC, sans-serif">
+    <rect x="120" y="180" width="960" height="104" rx="20" fill="#ffffff" stroke="#dfe5ef" stroke-width="2"/>
+    <circle cx="176" cy="232" r="30" fill="#1f5eff"/><text x="176" y="241" text-anchor="middle" fill="#ffffff" font-size="23" font-weight="700">01</text>
+    <text x="238" y="222" fill="#172033" font-size="29" font-weight="700">模型权重</text><text x="238" y="258" fill="#657084" font-size="24">Kimi K3</text>
+
+    <path d="M600 284v30" stroke="#1f5eff" stroke-width="5"/><path d="M586 307l14 16 14-16" fill="none" stroke="#1f5eff" stroke-width="5"/>
+    <rect x="120" y="324" width="960" height="104" rx="20" fill="#ffffff" stroke="#dfe5ef" stroke-width="2"/>
+    <circle cx="176" cy="376" r="30" fill="#1f5eff"/><text x="176" y="385" text-anchor="middle" fill="#ffffff" font-size="23" font-weight="700">02</text>
+    <text x="238" y="366" fill="#172033" font-size="29" font-weight="700">推理托管</text><text x="238" y="402" fill="#657084" font-size="24">Fireworks AI</text>
+
+    <path d="M600 428v30" stroke="#1f5eff" stroke-width="5"/><path d="M586 451l14 16 14-16" fill="none" stroke="#1f5eff" stroke-width="5"/>
+    <rect x="120" y="468" width="960" height="104" rx="20" fill="#ffffff" stroke="#dfe5ef" stroke-width="2"/>
+    <circle cx="176" cy="520" r="30" fill="#1f5eff"/><text x="176" y="529" text-anchor="middle" fill="#ffffff" font-size="23" font-weight="700">03</text>
+    <text x="238" y="510" fill="#172033" font-size="29" font-weight="700">平台编排</text><text x="238" y="546" fill="#657084" font-size="24">GitHub Copilot</text>
+
+    <path d="M600 572v30" stroke="#1f5eff" stroke-width="5"/><path d="M586 595l14 16 14-16" fill="none" stroke="#1f5eff" stroke-width="5"/>
+    <rect x="120" y="612" width="960" height="104" rx="20" fill="#ffffff" stroke="#dfe5ef" stroke-width="2"/>
+    <circle cx="176" cy="664" r="30" fill="#1f5eff"/><text x="176" y="673" text-anchor="middle" fill="#ffffff" font-size="23" font-weight="700">04</text>
+    <text x="238" y="654" fill="#172033" font-size="29" font-weight="700">执行基础设施</text><text x="238" y="690" fill="#657084" font-size="24">Actions / Coding Agent</text>
+
+    <path d="M600 716v30" stroke="#1f5eff" stroke-width="5"/><path d="M586 739l14 16 14-16" fill="none" stroke="#1f5eff" stroke-width="5"/>
+    <rect x="120" y="756" width="960" height="104" rx="20" fill="#ffffff" stroke="#dfe5ef" stroke-width="2"/>
+    <circle cx="176" cy="808" r="30" fill="#1f5eff"/><text x="176" y="817" text-anchor="middle" fill="#ffffff" font-size="23" font-weight="700">05</text>
+    <text x="238" y="798" fill="#172033" font-size="29" font-weight="700">开发入口与治理</text><text x="238" y="834" fill="#657084" font-size="24">IDE / CLI / 组织策略 / 计费</text>
+  </g>
+  <rect x="120" y="892" width="960" height="2" fill="#dfe5ef"/>
+  <circle cx="137" cy="925" r="8" fill="#d79a2b"/><text x="160" y="934" fill="#465166" font-family="Noto Sans CJK SC, sans-serif" font-size="23">任何一层中断，都可能让 Agent 任务无法闭环</text>
+</svg>
