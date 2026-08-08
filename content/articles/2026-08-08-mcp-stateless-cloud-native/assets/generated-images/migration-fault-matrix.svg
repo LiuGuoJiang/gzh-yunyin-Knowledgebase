@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="960" viewBox="0 0 1200 960">
+  <rect width="1200" height="960" fill="#f4f4f1"/>
+  <text x="72" y="88" fill="#151515" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="48" font-weight="800">无状态迁移，要验证的不是“能访问”</text>
+  <text x="72" y="134" fill="#70706c" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="24">主动制造跨实例、重试和恢复故障，再检查业务结果</text>
+
+  <rect x="72" y="190" width="1056" height="66" rx="12" fill="#1b1b1b"/>
+  <text x="116" y="233" fill="#ffffff" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700">故障注入</text>
+  <text x="535" y="233" fill="#ffffff" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="26" font-weight="700">必须验证的结果</text>
+
+  <g font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif">
+    <rect x="72" y="272" width="1056" height="104" rx="14" fill="#ffffff" stroke="#d2d2ce" stroke-width="2"/>
+    <circle cx="116" cy="324" r="17" fill="#d99222"/>
+    <text x="158" y="318" fill="#171717" font-size="27" font-weight="700">轮询切换 Pod</text>
+    <text x="535" y="318" fill="#2b2b29" font-size="25">普通请求不依赖上一实例的 Session</text>
+    <text x="535" y="350" fill="#6d6d69" font-size="21">同时观察协议版本与 legacy 回退率</text>
+
+    <rect x="72" y="390" width="1056" height="104" rx="14" fill="#ffffff" stroke="#d2d2ce" stroke-width="2"/>
+    <circle cx="116" cy="442" r="17" fill="#d99222"/>
+    <text x="158" y="436" fill="#171717" font-size="27" font-weight="700">MRTR 中途换 Pod</text>
+    <text x="535" y="436" fill="#2b2b29" font-size="25">requestState 可验签、可恢复、不会串用户</text>
+    <text x="535" y="468" fill="#6d6d69" font-size="21">多副本共享密钥、audience 与 TTL 策略</text>
+
+    <rect x="72" y="508" width="1056" height="104" rx="14" fill="#ffffff" stroke="#d2d2ce" stroke-width="2"/>
+    <circle cx="116" cy="560" r="17" fill="#d99222"/>
+    <text x="158" y="554" fill="#171717" font-size="27" font-weight="700">响应流中断后重试</text>
+    <text x="535" y="554" fill="#2b2b29" font-size="25">有副作用的 Tool 不会重复执行</text>
+    <text x="535" y="586" fill="#6d6d69" font-size="21">使用业务幂等键、去重记录与补偿路径</text>
+
+    <rect x="72" y="626" width="1056" height="104" rx="14" fill="#ffffff" stroke="#d2d2ce" stroke-width="2"/>
+    <circle cx="116" cy="678" r="17" fill="#d99222"/>
+    <text x="158" y="672" fill="#171717" font-size="27" font-weight="700">Task 运行中重启 Worker</text>
+    <text x="535" y="672" fill="#2b2b29" font-size="25">taskId 仍可查询，任务能继续或明确失败</text>
+    <text x="535" y="704" fill="#6d6d69" font-size="21">返回句柄前先持久化任务</text>
+
+    <rect x="72" y="744" width="1056" height="104" rx="14" fill="#ffffff" stroke="#d2d2ce" stroke-width="2"/>
+    <circle cx="116" cy="796" r="17" fill="#d99222"/>
+    <text x="158" y="790" fill="#171717" font-size="27" font-weight="700">跨用户重放状态</text>
+    <text x="535" y="790" fill="#2b2b29" font-size="25">篡改、过期和越权 requestState 被拒绝</text>
+    <text x="535" y="822" fill="#6d6d69" font-size="21">头部可治理，但后端仍逐请求鉴权</text>
+  </g>
+
+  <rect x="72" y="884" width="1056" height="44" rx="8" fill="#242424"/>
+  <text x="600" y="914" text-anchor="middle" fill="#eeeeeb" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">负载均衡通过 ≠ 无状态迁移完成</text>
+</svg>

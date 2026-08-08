@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 1200 1000">
+  <rect width="1200" height="1000" fill="#f4f4f1"/>
+  <text x="72" y="92" fill="#151515" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="48" font-weight="800">MCP 无状态之后，状态去了哪里？</text>
+  <text x="72" y="138" fill="#70706c" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="24">删掉的是协议 Session，不是应用状态</text>
+
+  <rect x="72" y="190" width="250" height="680" rx="22" fill="#171717"/>
+  <text x="197" y="260" text-anchor="middle" fill="#ffffff" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="31" font-weight="750">任意 MCP 请求</text>
+  <path d="M132 330 H262 M132 390 H262 M132 450 H262" stroke="#5b5b58" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="157" cy="330" r="11" fill="#d99222"/>
+  <circle cx="197" cy="390" r="11" fill="#eeeeeb"/>
+  <circle cx="237" cy="450" r="11" fill="#8b8b87"/>
+  <text x="197" y="535" text-anchor="middle" fill="#c7c7c2" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="24">请求自包含</text>
+  <text x="197" y="575" text-anchor="middle" fill="#c7c7c2" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="24">实例可替换</text>
+  <path d="M197 640 V742" stroke="#d99222" stroke-width="5" stroke-dasharray="10 10"/>
+  <circle cx="197" cy="765" r="28" fill="none" stroke="#d99222" stroke-width="5"/>
+  <path d="M180 748 L214 782 M214 748 L180 782" stroke="#d99222" stroke-width="5"/>
+  <text x="197" y="830" text-anchor="middle" fill="#e0e0dc" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="20">不再依赖传输 Session</text>
+
+  <path d="M322 304 H370 M322 420 H370 M322 536 H370 M322 652 H370 M322 768 H370" stroke="#777773" stroke-width="3"/>
+  <path d="M356 292 L370 304 L356 316 M356 408 L370 420 L356 432 M356 524 L370 536 L356 548 M356 640 L370 652 L356 664 M356 756 L370 768 L356 780" fill="none" stroke="#777773" stroke-width="3"/>
+
+  <g font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif">
+    <rect x="370" y="228" width="758" height="104" rx="16" fill="#ffffff" stroke="#d3d3cf" stroke-width="2"/>
+    <rect x="370" y="228" width="12" height="104" rx="6" fill="#d99222"/>
+    <text x="414" y="272" fill="#171717" font-size="29" font-weight="750">1｜协议与鉴权</text>
+    <text x="414" y="309" fill="#555551" font-size="23">每次请求携带 _meta 与 Bearer Token，逐次校验</text>
+
+    <rect x="370" y="344" width="758" height="104" rx="16" fill="#ffffff" stroke="#d3d3cf" stroke-width="2"/>
+    <text x="414" y="388" fill="#171717" font-size="29" font-weight="750">2｜业务状态</text>
+    <text x="414" y="425" fill="#555551" font-size="23">显式 handle ＋ 业务存储，校验归属、权限与有效期</text>
+
+    <rect x="370" y="460" width="758" height="104" rx="16" fill="#ffffff" stroke="#d3d3cf" stroke-width="2"/>
+    <text x="414" y="504" fill="#171717" font-size="29" font-weight="750">3｜交互中间态</text>
+    <text x="414" y="541" fill="#555551" font-size="23">requestState ＋ 验签 / TTL / 用户绑定</text>
+
+    <rect x="370" y="576" width="758" height="104" rx="16" fill="#ffffff" stroke="#d3d3cf" stroke-width="2"/>
+    <text x="414" y="620" fill="#171717" font-size="29" font-weight="750">4｜长任务</text>
+    <text x="414" y="657" fill="#555551" font-size="23">持久 taskId ＋ 任务队列 / 数据库</text>
+
+    <rect x="370" y="692" width="758" height="104" rx="16" fill="#ffffff" stroke="#d3d3cf" stroke-width="2"/>
+    <text x="414" y="736" fill="#171717" font-size="29" font-weight="750">5｜通知</text>
+    <text x="414" y="773" fill="#555551" font-size="23">请求内 SSE ＋ 跨副本 Subscription Bus</text>
+  </g>
+
+  <rect x="72" y="904" width="1056" height="60" rx="12" fill="#242424"/>
+  <text x="600" y="944" text-anchor="middle" fill="#eeeeeb" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="700">无状态 ≠ 没有状态 ｜ 它要求状态归属显式化</text>
+</svg>

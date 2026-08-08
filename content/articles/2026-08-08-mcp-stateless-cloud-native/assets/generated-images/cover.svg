@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1440" viewBox="0 0 1080 1440">
+  <defs>
+    <linearGradient id="headline-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050505" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#111111" stop-opacity="0.78"/>
+    </linearGradient>
+  </defs>
+  <image x="0" y="0" width="1080" height="1440" preserveAspectRatio="xMidYMid slice" xlink:href="cover-art.png"/>
+  <rect x="72" y="78" width="164" height="56" rx="8" fill="#efefef"/>
+  <text x="154" y="116" text-anchor="middle" fill="#171717" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="27" font-weight="700">AI思考</text>
+  <text x="72" y="205" fill="#bdbdbd" font-family="Noto Sans, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="2">MCP · STATE OWNERSHIP</text>
+  <rect x="56" y="250" width="920" height="292" rx="18" fill="url(#headline-bg)" stroke="#3b3b3b" stroke-width="1"/>
+  <rect x="72" y="282" width="8" height="178" fill="#d99222"/>
+  <text x="102" y="355" fill="#ffffff" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="68" font-weight="800">关于 MCP，程序员</text>
+  <text x="102" y="452" fill="#ffffff" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="66" font-weight="800">太晚知道的 5 个教训</text>
+  <rect x="102" y="485" width="286" height="40" rx="20" fill="#242424" stroke="#686868" stroke-width="1"/>
+  <text x="245" y="514" text-anchor="middle" fill="#d6d6d6" font-family="Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="22" font-weight="600">无状态 × 状态归属</text>
+  <text x="72" y="1386" fill="#b8b8b8" font-family="Noto Sans, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="1.5">TECH INSIGHT | 2026</text>
+</svg>
